@@ -1,0 +1,16 @@
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1080px) {
+    .footer {
+        position: fixed;
+    }
+  }
