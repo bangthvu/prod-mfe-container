@@ -4,7 +4,10 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: 
+      argv.mode === 'development' 
+      ? "http://localhost:8080/"
+      : "https://prod-mfe-container.vercel.app/"
   },
 
   resolve: {
@@ -44,8 +47,8 @@ module.exports = {
       name: "container",
       filename: "remoteEntry.js",
       remotes: {
-        forside: "forside@http://localhost:8081/remoteEntry.js",
-        artikelside: "artikelside@http://localhost:8082/remoteEntry.js"
+        forside: "forside@https://prod-mfe-forside.vercel.app/remoteEntry.js", 
+        artikelside: "artikelside@https://prod-mfe-artikelside.vercel.app/remoteEntry.js"
       },
       exposes: {
         "./Header": "./src/components/Header",
