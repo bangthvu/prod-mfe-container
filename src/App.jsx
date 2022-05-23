@@ -6,6 +6,7 @@ import { Footer } from './components/Footer'
 import { Forside } from 'forside/Forside';
 import { Artikelside } from 'artikelside/Artikelside';
 import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const API_URL = "http://localhost:8084"
 
