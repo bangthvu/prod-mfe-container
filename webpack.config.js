@@ -55,8 +55,8 @@ module.exports = (_, argv) => ({
       name: "container",
       filename: "remoteEntry.js",
       remotes: {
-        forside: "forside@http://localhost:8081/remoteEntry.js", 
-        artikelside: "artikelside@http://localhost:8082/remoteEntry.js"
+        forside: "forside@https://prod-mfe-forside.vercel.app/remoteEntry.js", 
+        artikelside: "artikelside@https://prod-mfe-artikelside.vercel.app/remoteEntry.js"
       },
       exposes: {
         "./Header": "./src/components/Header",

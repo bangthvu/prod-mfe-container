@@ -8,7 +8,7 @@ import { Artikelside } from 'artikelside/Artikelside';
 import "./index.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const API_URL = "http://localhost:8084"
+const API_URL = "https://prod-mfe-server.herokuapp.com"
 
 
 
@@ -30,20 +30,13 @@ export const App = () => {
   }, []);
 
 
-  async function getOneArticle(id) {
-    const url = `${API_URL}/api/articles${id}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-}
-
   return (
   <Router>
   <div>
   <Header/>
   <Routes>
     <Route path="/" element={<Forside getArtData={artData}/>}></Route>
-    <Route path="/:id" element={<Artikelside getArtData={artData} getOneArticle={getOneArticle}/>}></Route>
+    <Route path="/:id" element={<Artikelside getArtData={artData}/>}></Route>
     </Routes>
     <Footer/>
   </div>
